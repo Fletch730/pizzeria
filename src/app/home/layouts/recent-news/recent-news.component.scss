@@ -1,0 +1,24 @@
+:host {       //1st alternative
+    display: block;
+    background-color: black;
+    padding-bottom: 3%;
+  }
+
+
+.img{
+    max-width:200%;
+    max-height:200%;
+    display: block;
+}
+
+
+@media(max-width: 666px){
+    .header{
+        font-family:PT Sans Narrow ;
+        font-size:12vh;
+    }
+  }
+
+  .swiper-slide{
+    height: auto !important;
+}

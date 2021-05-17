@@ -1,0 +1,111 @@
+<section class="banner">
+    <div class="container text-center">
+      <h1 class="top-header">CHECKOUT</h1>
+    </div>
+  </section>
+  <section class="bg-white">
+    <div class="container border">
+        <div class="row border">
+            <div class="col-md-8 border">
+                <p class="sub-header text-left">BILLING DETAILS</p>
+                <form>
+                    <label>Full Name:</label><br>
+                    <input type="text" class="form-control form-control-lg"><br><br>
+                    <label>Email:</label><br>
+                    <input type="text" class="form-control form-control-lg"><br><br>
+                    <label>Phone No:</label><br>
+                    <input type="text" class="form-control form-control-lg"><br><br>
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label>City:</label><br>
+                            <input type="text" class="form-control form-control-lg"><br><br>
+                        </div>
+                    <div class="col-sm-6 ">
+                        <label>Pincode:</label><br>
+                        <input type="text" class="form-control form-control-lg" size=2><br><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <label>Landmark:</label><br>
+                            <input type="text" class="form-control form-control-lg"><br><br>
+                        </div>
+                    <div class="col-sm-6 ">
+                        <label>House-no: (Optional)</label><br>
+                        <input type="text" class="form-control form-control-lg"><br><br>
+                        </div>
+                    </div>               
+                    <label>Comments:</label><br>
+                    <input type="text" class="form-control form-control-lg"><br><br>                 
+                </form>
+                <p class="para text-left">Create An Account</p>
+                <div class="container text-left my-3">
+                <p class="sub-header text-left ">SHIPPING DETAILS</p>
+                <p class="para text-left">Ship To a Different Address?</p>
+            </div>
+            <div class="container text-left my-4">
+                <p class="sub-header text-left ">Order Notes</p>
+                <p class="para border">
+                    In a standard purchase order, the purchaser will, at a minimum, specify what products are being ordered,
+                     the quantity, the agreed price and delivery and payment terms. A purchase order may arise out of a past order,
+                    an advertisement or offer by the vendor, or the parties' negotiation as to the price and quantity.
+                </p>
+            </div>
+
+            </div>
+            <div class="col-md-4 border">
+                <p class="sub-header">YOUR ORDER</p>
+                <div class="flex-container"  *ngFor="let item of cartItems" >
+                    <div class="row my-3">
+                        <div class="col">
+                            <img [src]="item.image" [alt]="item.name" width="100%" height="100%">
+                        </div>
+                        <div class="col mb-3">
+                            <p class="subheader text-left">{{item.name}}</p>
+                            <p class="para text-left">{{item.price}}</p>
+                            <p class="para text-left">Qty: {{item.quantity}}</p>
+                        </div>
+                      
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+                <mat-divider></mat-divider>
+                    <div>
+                        <mat-divider></mat-divider>
+                        <table class="table table-striped table-border" style="border: 1px solid black;">
+                            <thead>
+                              <tr>
+                                <th scope="col">Order Date</th>
+                                <td scope="col">{{today|date}}</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">Total</th>
+                                <td>{{total}}</td>
+                               
+                              </tr>
+                              <tr>
+                                <th scope="row">Payment</th>
+                                <td>COD</td>
+                                
+                              </tr>
+                              <tr>
+                                <th scope="row">OrderNo</th>
+                                <td>1234</td>
+                               
+                              </tr>
+                            </tbody>
+                          </table>
+                          <button class="btn button">PLACE ORDER</button>
+                    </div>
+                    
+            
+
+                
+
+            </div>
+        </div>
+    </div>
+  </section>

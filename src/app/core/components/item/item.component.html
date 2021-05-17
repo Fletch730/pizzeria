@@ -1,0 +1,36 @@
+
+<div class="container  text-center border1 ">
+    <span class="material-icons light " style="float: right; color: orange;" (click)="closeDialog()" role="button">
+        cancel
+        </span>
+    <div class="row ">
+        <div class="col ">
+<img [src]="data.image" [alt]="data.name" width="400px" height="400px" class="img">
+        </div>
+        <div class="col ">
+            <p class="header">{{data.name}}</p>
+            <p class="para">{{data.description}}</p>
+            <div class="row">
+                <div class="col">
+                    <p class="para">{{data.ingredient1}}</p>
+                </div>
+                <div class="col">
+                    <p class="para">{{data.ingredient2}}</p>
+                </div>
+                <div class="col">
+                    <p class="para">{{data.ingredient3}}</p>
+                </div>
+            </div>
+            <p class="para">₹ {{data.price}}</p>
+            <button type="button" class=" button mr-2 text-center" mat-buttom-button (click)="onClickRemove()">-</button>
+           {{counter}}
+            <button type="button" class=" button ml-2 text-center" mat-raised-button (click)="onClickAdd()">+</button>
+            <p class="sub-header">₹.{{amount}}</p>
+            <button type="button"class="btn button text-center mx-3" (click)="proceedToCart()">Order Now</button>
+            <button type="button"class="btn button mb-1 justify-content-center" (click)="addToCart()">Add To Cart</button>
+        </div>
+    </div>
+    <!-- <button type="button"class="btn button my-3 justify-content-center" (click)="closeDialog()">Close</button> -->
+</div>
+
+

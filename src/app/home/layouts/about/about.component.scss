@@ -1,0 +1,20 @@
+:host {       //1st alternative
+    display: block;
+    background-color: #fd9d3e;
+   
+  }
+
+.img{
+    max-width:200%;
+    max-height:200%;
+    display: block;
+  }
+
+
+
+  @media(max-width: 575px){
+    .img{
+       display: none;
+    }
+  }
+

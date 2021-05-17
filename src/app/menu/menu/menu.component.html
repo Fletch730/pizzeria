@@ -1,0 +1,95 @@
+<section class="banner">
+<div class="Container-fluid ">
+    <h1 class="top-header">FOOD MENUS</h1>
+</div>
+</section>
+
+<div class="container-fluid  bg-white  text-center py-5">
+    <div class="btn-group text-center">
+      <div id="btn"  [style]="btn"></div>
+        <button  class="btn1 mr-3"  (click)="onClickPizza()">PIZZA</button>
+        <button  class="btn1 mr-3" (click)="onClickPasta()">PASTA</button>
+        <button  class="btn1 mr-3" (click)="onClickDrinks()">DRINKS</button>
+        <button  class="btn1 mr-3"(click)="onClickSalad()">SALAD</button>
+        <button  class="btn1" (click)="onClickDeserts()">DESERTS</button>
+      </div>
+</div>
+<div class="bg-white d-flex justify-content-start" >
+  <div class="container  py-2" *ngIf="pizza">
+      <div *ngFor="let items of pizzaItems" class="card" style="width: 20rem;">
+        <div class="card-header bg-white">
+          <img class="card-img-top" [src]="items.image" alt="Magherita Pizza" height="200px" width="200px">
+          <p class="sub-header">{{items.name}}</p>
+        </div>
+        <div class="card-body">
+          <p class="para ">{{items.Description}}</p>
+        </div>
+        <div class="card-footer bg-white border-0">
+          <p class="orange-link "><a (click)="onItemClick(items)">ORDER NOW</a></p>
+        </div>
+      </div>
+  </div>
+ 
+
+
+<div  class="container py-2" *ngIf="pasta">
+  <div *ngFor="let items of pastaItems" class="card " style="width: 20rem;">
+    <div class="card-header bg-white">
+      <img class="card-img-top" [src]="items.image" alt="Magherita Pizza" height="200px" width="200px">
+      <p class="sub-header">{{items.name}}</p>
+    </div>
+    <div class="card-body">
+      <p class="para">{{items.Description}}</p>
+    </div>
+    <div class="card-footer bg-white border-0">
+      <p class="orange-link"><a (click)="onItemClick(items)">ORDER NOW</a></p>
+    </div>
+  </div>
+</div>
+
+<div  class="container   py-2" *ngIf="drinks">
+  <div *ngFor="let items of drinksItems" class="card " style="width: 20rem;">
+    <div class="card-header bg-white">
+      <img class="card-img-top" [src]="items.image" alt="Magherita Pizza" height="200px" width="200px">
+      <p class="sub-header">{{items.name}}</p>
+    </div>
+    <div class="card-body">
+      <p class="para">{{items.Description}}</p>
+    </div>
+    <div class="card-footer bg-white border-0">
+      <p class="orange-link"><a (click)="onItemClick(items)">ORDER NOW</a></p>
+    </div>
+  </div>
+</div>
+
+<div  class="container   py-2" *ngIf="salad">
+  <div *ngFor="let items of saladItems" class="card " style="width: 20rem;">
+    <div class="card-header bg-white">
+      <img class="card-img-top" [src]="items.image" alt="Magherita Pizza" height="200px" width="200px">
+      <p class="sub-header">{{items.name}}</p>
+    </div>
+    <div class="card-body">
+      <p class="para">{{items.Description}}</p>
+    </div>
+    <div class="card-footer bg-white border-0">
+      <p class="orange-link"><a (click)="onItemClick(items)">ORDER NOW</a></p>
+    </div>
+  </div>
+</div>
+
+<div  class="container   py-2" *ngIf="deserts">
+  <div *ngFor="let items of dessertsItems" class="card " style="width: 20rem;">
+    <div class="card-header bg-white">
+      <img class="card-img-top" [src]="items.image" alt="Magherita Pizza" height="200px" width="200px">
+      <p class="sub-header">{{items.name}}</p>
+    </div>
+    <div class="card-body">
+      <p class="para">{{items.Description}}</p>
+    </div>
+    <div class="card-footer bg-white border-0">
+      <p class="orange-link"><a (click)="onItemClick(items)">ORDER NOW</a></p>
+    </div>
+  </div>
+</div>
+</div>
+

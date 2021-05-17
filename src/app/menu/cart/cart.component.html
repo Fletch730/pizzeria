@@ -1,0 +1,96 @@
+<section class="banner">
+  <div class="container text-center">
+    <h1 class="top-header">CART</h1>
+  </div>
+</section>
+
+<section class="bg-white py-5 mt-5" >
+    <div class="container ">
+        <p  *ngIf="!cartItems.length" class="sub-header"><u>Cart Empty!</u><br /> Please Select Items From Menu.</p>
+        <table  *ngIf="cartItems.length"  class="table table1 table-bordered text-center  " style="width: 100%;">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Sub Total</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let item of cartItems; let i = index">
+                <td><img [src]="item.image" [alt]="item.name" width="100px" height="100px"></td>
+                <td>{{item.name}}</td>
+                <td class="text-danger">Rs.{{item.price}}</td>
+                <td>
+                  <button type="button" class=" button mr-2 text-center" mat-buttom-button (click)="onClickRemove(i)">-</button>
+                  {{item.quantity}}
+                  <button type="button" class=" button ml-2 text-center" mat-raised-button (click)="onClickAdd(i)">+</button>
+                 
+                </td>
+                <td class="text-danger">{{item.subTotal}}</td>
+                <td><button class="btn" (click)="delete(i)"><span class="material-icons">delete</span></button></td>
+              </tr>
+            </tbody>
+          </table>
+
+        <div *ngIf="cartItems.length" class="text-center">
+          <div *ngFor="let item of cartItems; let i = index"  class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-sm-4">
+                <img [src]="item.image" class="card-img" [alt]="item.name" width="200px" height="200px">
+              </div>
+              <div class="col-sm-8">
+                <div class="card-body">
+                  <h5 class="header-black">{{item.name}}</h5>
+                  <p class="para text-muted">{{item.price}}</p>
+                  <button type="button" class=" button mr-2 text-center" mat-buttom-button (click)="onClickRemove(i)">-</button>
+                 {{item.quantity}}
+                  <button type="button" class=" button ml-2 text-center" mat-raised-button (click)="onClickAdd(i)">+</button>
+                  <p class="para"><b>SubTotal:</b>{{item.subTotal}}</p>
+                  <button (click)="delete(i)" class="button btn1  "><span class="material-icons">delete</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+          <button *ngIf="cartItems.length" class="btn mb-2"  [routerLink]="['/order/Menu']">CONTINUE SHOPPING</button>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngIf="cartItems.length" class="container text-right">
+      <div class="row">
+      <div class="col">
+        <p class="sub-header text-left">ESTIMATE SHIPPING AND TAX</p>
+      </div>
+      <div class="col pt-3">
+        <table class="table table-border">
+          <thead class="text-center">
+            <tr>
+              <th scope="col">Cart Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="para">Items Subtotal</td>
+              <td class="para text-danger">{{total}}</td>
+            </tr>
+            <tr>
+              <td class="para">Standard Shipping</td>
+              <td class="para text-danger">150</td>
+            </tr>
+            <tr>
+              <td class="para">Amount Payable</td>
+              <td class="para text-danger">{{total+150}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      <button *ngIf="cartItems.length" [routerLink]="['/order/Checkout']" class="btn">PROCEED TO CHECKOUT</button>
+    </div>
+   
+</section>

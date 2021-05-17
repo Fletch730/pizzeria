@@ -1,0 +1,72 @@
+.banner{
+    background-image: url("../../../assets/images/Reservation.jpg") ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:360px;
+}
+.col1{
+    background-image: url("../../../assets/images/Reservations1.jpg") ;
+    background-repeat:no-repeat;
+    background-position: right top;
+    background-size:auto ;
+    height: 500px;
+ 
+}
+.col2{
+    //line-height: 100%;
+    height: 500px;
+  
+}
+.col3{
+    background-image: url("../../../assets/images/Reservation2.jpg") ;
+    background-repeat:no-repeat;
+    background-position: right top;
+    background-size:auto ;
+    height: 500px;
+ 
+ 
+}
+.orange-cursive{
+    color:  #fd9d3e; 
+    font-size: 30px;
+    font-family:pacifico ;
+    padding-top: 30%;
+    text-align: center;
+}
+.header-black{
+    font-family:PT Sans Narrow ;
+    font-size:15vh;
+    color: black;
+}
+.btn{
+    background-color: #fd9d3e; 
+  
+   width: 100%;
+}
+
+
+@media(min-width: 30px)and
+(max-width:767px){
+    .col1{
+        display: none;
+    }
+  
+    .col2{
+        //line-height: 100%;
+      
+        background-image: url("../../../assets/images/Reservations1.jpg") ;
+        background-position: cover;
+        height: 350px;
+    }
+    .col3{
+        display: none;
+    }
+    .color{
+        color:  #fd9d3e; 
+        font-size: 30px;
+        font-family:pacifico ;
+        padding-top: 20%;
+        text-align: center;
+    }
+   
+  }

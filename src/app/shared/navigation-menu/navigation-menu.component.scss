@@ -1,0 +1,75 @@
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .navbar{
+    font-family: 'PT Sans Narrow';font-size: 16px;
+    background-color:black;
+    color: white !important;
+    position: sticky;
+    
+  }
+  .button{
+    border-radius: 25%;
+    background-color:#91b842;
+    padding: 10px 20px;
+  }
+
+ul a:hover { 
+ color: white;
+  //background-color: #fd9d3e !important;
+  border-bottom: 3px solid#fd9d3e;
+ }
+ 
+.active{
+  color: white;
+  //background-color: #fd9d3e !important;
+  border-bottom: 3px solid#fd9d3e;
+}
+
+  
+@media screen and (max-width: 991px) {
+  .navbar-collapse {
+  
+    background-color:black;
+  }
+  .button{
+    margin-left: auto;
+  }
+  
+   
+ }
+
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+
+
+.bg-image {
+  background-image: url('../../../assets/images/loginPic.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #fd9d3e;
+}
+

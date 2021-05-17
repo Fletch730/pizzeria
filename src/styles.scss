@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~swiper/swiper-bundle';
+
+// body { background-color: #121619;
+// }
+.top-header{
+    font-family:PT Sans Narrow ;
+    font-size:60px;
+    color: white;
+}
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner.div{
+      width: 100px;
+      height: 100px;
+  }
+
+
+.sub-header-black{
+    font-family:PT Sans Narrow ;
+    font-size:80px;
+    text-align: center;
+}
+.sub-header-white{
+    font-family:PT Sans Narrow ;
+    font-size:80px;
+    text-align: center;
+    color: white;
+}
+.orange-cursive{
+    color:  #fd9d3e; 
+    font-size: 30px;
+    font-family:pacifico ;
+}
+.para{
+    font-family:PT Sans Narrow ;
+    font-size:16px;
+    color: rgba(97, 96, 96, 0.699);
+    text-align: center;
+}
+.button{
+    background-color: #fd9d3e; 
+    
+    border-radius: 30px;
+    padding-top:1.5% ;
+    padding-bottom:1.5% ;
+    padding-right: 4%;
+    padding-left: 4%;
+    color: white;
+    font-family:PT Sans Narrow ;
+    font-size: 20px;
+    border: none;
+}
+
+@media screen and (max-width: 600px) {
+    .sub-header-black{
+        font-family:PT Sans Narrow ;
+        font-size:50px;
+        text-align: center;
+    }
+    .sub-header-white{
+        font-family:PT Sans Narrow ;
+        font-size:50px;
+        text-align: center;
+        color: white;
+    }
+   }
+ 

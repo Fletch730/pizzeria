@@ -1,0 +1,43 @@
+:host {       //1st alternative
+    display: block;
+    background-color: white;
+    padding-bottom: 3%;
+  }
+
+  .sub-header{
+      font-size: 30px;
+      font-family:PT Sans Narrow ;
+      letter-spacing: 5px;
+
+  }
+
+.font{
+    font-family:PT Sans Narrow ;
+    font-size:30px
+}
+
+.phone-style{
+    background-color: black;
+    border:10px solid #fd9d3e;
+    color: white;
+    letter-spacing: 3px;
+}
+
+.phone-header{
+    font-family:PT Sans Narrow ;
+    font-size:9vh;
+}
+
+
+@media(max-width: 666px){
+    .phone-header{
+        font-family:PT Sans Narrow ;
+        font-size:6vh;
+    }
+  }
+  @media(max-width: 991px){
+    .phone-header{
+        font-family:PT Sans Narrow ;
+        font-size:8vh;
+    }
+  }

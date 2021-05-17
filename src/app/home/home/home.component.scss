@@ -1,0 +1,37 @@
+.img{
+  width:100%;
+  max-height:100%;
+}
+
+.header1{
+    font-size: 150px;
+    font-family: 'Port Lligat Sans';
+    //width:19vh;
+    margin-top: 15%;
+}
+
+.header2{
+    font-family: 'PT Sans Narrow';
+    font-size: 25px;
+    color: #fd9d3e;
+    letter-spacing: 15px;
+}
+  
+  @media screen and (max-width: 600px) {
+   .header1 {
+      font-size: 60px;
+    } 
+  }
+
+  
+  @media screen and (min-width: 768px) and (max-width: 1080px) {
+    .header1 {
+       font-size: 100px;
+     } 
+   }
+
+   :host {       //1st alternative
+    display:block;
+    background-color: black;
+    //padding: 3%;
+  }

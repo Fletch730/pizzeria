@@ -1,0 +1,125 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow  "  >
+ 
+  <a class="navbar-brand" routerLink="">
+    <img src="../../../assets/images/logo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  (click)="isCollapsed = !isCollapsed" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav ml-auto text-center ">
+      <li class="nav-item  mr-5">
+        <a class="nav-link active " routerLinkActive="active" routerLink="">HOME </a>
+      </li>
+      <li class="nav-item mr-5">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/order/Menu']">MENU</a>
+      </li>
+      <li class="nav-item mr-5">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/more/reservation']">RESERVATION</a>
+      </li>
+      <li class="nav-item mr-5">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/more/aboutUs']">ABOUT US</a>
+      </li>
+      <li class="nav-item mr-5" >
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/more/contactUs']">CONTACT</a>
+      </li>
+    </ul>
+    <button class=" button ml-auto" [routerLink]="['/order/Cart']">
+      <span class='badge badge-warning accent' id='lblCartCount' > {{cartLength}} </span>
+      <span class="material-icons light">
+        shopping_cart
+        </span>
+   
+</button>
+    <button class="button ml-5 " (click)="login(loginModal)">LOGIN</button>
+  </div>
+</nav>
+
+
+<ng-template #loginModal let-c="close" let-d="dismiss">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <button type="button" class="close" aria-label="Close" (click)="c('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </button>
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto" *ngIf="loginForm">
+                <h3 class="login-heading orange-cursive mb-4">Welcome back !</h3>
+                <form>
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus><br>  
+                  </div>
+  
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                   
+                  </div>
+  
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                  <div class="text-center">
+                    <a class="small" href="#">Forgot password?</a>
+                    <p>Dont't have an account ? <a class="small" role="button" (click)="displayCreateForm()">Create Account</a></p>
+                  
+                  </div>
+                </form>
+              </div>
+              <!-- Create form -->
+              <div class="col-md-9 col-lg-8 mx-auto" *ngIf=createForm>
+                <h3 class="login-heading orange-cursive mb-4">Sign Up !</h3>
+                <form>
+                  <div class="form-label-group">
+                    <input type="text" id="inputName" class="form-control" placeholder="Full Name" required autofocus><br> 
+                  </div>
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required><br>  
+                  </div>
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required><br>
+                  </div>
+                  <div class="form-label-group">
+                    <input type="text" id="inputName" class="form-control" placeholder="Phone Number" required ><br> 
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="City"><br>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Pincode"><br>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Landmark"><br>
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="House No:(Optional)"><br>
+                    </div>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign Up</button>
+                  <div class="text-center">
+                    <a class="small" href="#">Forgot password?</a>
+                    <p class="small" role="button" (click)="displayLoginForm()">Sign Up</p>
+                  
+                  </div>
+                </form>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</ng-template>

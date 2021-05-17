@@ -1,0 +1,43 @@
+
+.banner{
+    background-image: url("../../../assets/images/cart.jpg") ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:360px;
+}
+.btn{
+    border: none;
+    background-color: #fd9d3e;
+    font-family:PT Sans Narrow ;
+    color: white;
+    justify-content: end;
+}
+.button{
+    border: none;
+    background-color: #fd9d3e;
+    font-family:PT Sans Narrow ;
+    color: white;
+    justify-content: end;
+}
+table {
+    border: 1px solid black;
+  }
+  .cont{
+      display: flex;
+      flex-wrap:wrap;
+  }
+  @media(min-width:767px){
+    
+    .card{
+        display:none
+    }
+}
+  
+@media(max-width:767px){
+    .table1{
+        display: none;
+    }
+    .card{
+        display:block;
+    }
+}
