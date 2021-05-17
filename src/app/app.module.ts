@@ -13,6 +13,12 @@ import { AlertComponent } from './core/components/alert/alert.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import{MoreSectionModule} from './more-section/more-section.module'
 import { MenuModule } from './menu/menu.module';
+import { StoreModule } from '@ngrx/store';
+import * as fromApp from './store/app.reducer';
+import { AuthEffects } from './shared/navigation-menu/store/auth.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { MenuEffects } from './menu/menu/store/menu.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +38,14 @@ import { MenuModule } from './menu/menu.module';
     HomeModule,
     AboutUsModule,
     MoreSectionModule  ,
-    MenuModule
+    MenuModule,
+    HttpClientModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([
+      AuthEffects,
+      MenuEffects
+     
+    ]),
   ],
   entryComponents: [
     ItemComponent,
