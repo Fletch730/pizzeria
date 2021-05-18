@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatDialogModule } from '@angular/material/dialog';
 
 import {MatDividerModule} from '@angular/material/divider';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -31,7 +32,7 @@ import {MatDividerModule} from '@angular/material/divider';
     AboutComponent, 
     RecentNewsComponent, 
     ChefsComponent, 
-    BookTableComponent, 
+    BookTableComponent, ProfileComponent, 
   
   ],
     

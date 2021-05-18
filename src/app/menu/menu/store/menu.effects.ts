@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as MenuActions from '../store/menu.actions'
 import { Effect, ofType, Actions } from '@ngrx/effects';
@@ -16,9 +16,10 @@ export class MenuEffects{
     fetchPizzaList=this.actions$.pipe(
         ofType(MenuActions.FETCH_PIZZA_MENU),
         switchMap(()=>{
+            let headers=new HttpHeaders({'content-type':'application/json', 'Authorization':'Bearer ' + localStorage.getItem('accesstoken')});
             return this.http
             .get(
-                environment.baseUrl+"menu/pizzaList"
+                environment.baseUrl+"menu/pizzaList", { headers:headers}
             )
             .pipe(
                 map((resData:any)=>{
@@ -40,9 +41,10 @@ export class MenuEffects{
     fetchPastaList=this.actions$.pipe(
         ofType(MenuActions.FETCH_PASTA_MENU),
         switchMap(()=>{
+            let headers=new HttpHeaders({'content-type':'application/json', 'Authorization':'Bearer ' + localStorage.getItem('accesstoken')});
             return this.http
             .get(
-                environment.baseUrl+"menu/pastaList"
+                environment.baseUrl+"menu/pastaList", { headers:headers}
                 ).pipe(
                     map((resData:any)=>{
                         return new MenuActions.fetchMenuSuccess({
@@ -62,9 +64,10 @@ export class MenuEffects{
     fetchdrinkList=this.actions$.pipe(
         ofType(MenuActions.FETCH_DRINK_MENU),
         switchMap(()=>{
+            let headers=new HttpHeaders({'content-type':'application/json', 'Authorization':'Bearer ' + localStorage.getItem('accesstoken')});
             return this.http
             .get(
-                environment.baseUrl+"menu/drinkList"
+                environment.baseUrl+"menu/drinkList", { headers:headers}
                 ).pipe(
                     map((resData:any)=>{
                         return new MenuActions.fetchMenuSuccess({
@@ -84,9 +87,10 @@ export class MenuEffects{
     fetchSaladList=this.actions$.pipe(
         ofType(MenuActions.FETCH_SALAD_MENU),
         switchMap(()=>{
+            let headers=new HttpHeaders({'content-type':'application/json', 'Authorization':'Bearer ' + localStorage.getItem('accesstoken')});
             return this.http
             .get(
-                environment.baseUrl+"menu/saladList"
+                environment.baseUrl+"menu/saladList", { headers:headers}
                 ).pipe(
                     map((resData:any)=>{
                         return new MenuActions.fetchMenuSuccess({
@@ -106,9 +110,10 @@ export class MenuEffects{
     fetchDessertList=this.actions$.pipe(
         ofType(MenuActions.FETCH_DESSERT_MENU),
         switchMap(()=>{
+            let headers=new HttpHeaders({'content-type':'application/json', 'Authorization':'Bearer ' + localStorage.getItem('accesstoken')});
             return this.http
             .get(
-                environment.baseUrl+"menu/dessertList"
+                environment.baseUrl+"menu/dessertList", { headers:headers}
                 ).pipe(
                     map((resData:any)=>{
                         return new MenuActions.fetchMenuSuccess({

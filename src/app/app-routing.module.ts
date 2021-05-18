@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { ContentComponent } from './content/content.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {path:'', component:ContentComponent,
@@ -13,7 +14,7 @@ const routes: Routes = [
 
     {path:'more', loadChildren:"./more-section/more-section.module#MoreSectionModule"},
 
-    {path:'order', loadChildren:"./menu/menu.module#MenuModule"}
+    {path:'order', canActivate: [ AuthGuard ], loadChildren:"./menu/menu.module#MenuModule"}
   ],
 
 },

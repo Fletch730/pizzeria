@@ -5,6 +5,7 @@ import { NavigationMenuComponent } from './navigation-menu/navigation-menu.compo
 import { FooterComponent } from './footer/footer.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbCollapseModule,
     RouterModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   
   ],
   exports:[

@@ -18,7 +18,10 @@ import * as fromApp from './store/app.reducer';
 import { AuthEffects } from './shared/navigation-menu/store/auth.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { MenuEffects } from './menu/menu/store/menu.effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpConfigInterceptor } from '../../src/app/core/interceptors/httpconfig.interceptor';
 
 
 @NgModule({
@@ -46,13 +49,20 @@ import { HttpClientModule } from '@angular/common/http';
       MenuEffects
      
     ]),
+    ReactiveFormsModule
   ],
   entryComponents: [
     ItemComponent,
     AlertComponent
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+            useClass: HttpConfigInterceptor,
+            multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

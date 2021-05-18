@@ -10,6 +10,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let tok=localStorage.getItem('Token')
+  console.log(tok)
   }
 
 }

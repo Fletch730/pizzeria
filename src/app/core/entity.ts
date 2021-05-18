@@ -8,3 +8,14 @@ export interface menu {
    price:number;
    description:string,
 }
+
+export interface user{
+   name:string;
+   email:string;
+   password:string;
+   phone:string
+   pincode:number;
+   city:string;
+   landmark:string;
+   houseNo?:number
+}
