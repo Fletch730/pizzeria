@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog,MatDialogConfig } from '@angular/material/dialog';
 import { ItemComponent } from 'src/app/core/components/item/item.component';
 import { DataService } from 'src/app/core/services/data.service';
-import * as fromApp from '../../store/app.reducer';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
-import * as MenuActions from '../menu/store/menu.actions'
+import { Subscription } from 'rxjs'
 import { menu } from 'src/app/core/entity';
 
 
@@ -19,7 +17,6 @@ import { menu } from 'src/app/core/entity';
 export class MenuComponent implements OnInit {
 
   dialogConfig: MatDialogConfig<any>;
-  storeSub!: Subscription;
   pizzaItems!:menu[];
   pastaItems:Array<any>=[];
  drinksItems:Array<any>=[];
@@ -34,7 +31,7 @@ export class MenuComponent implements OnInit {
   deserts!:boolean;
 
 
-  constructor(private dialog: MatDialog,private dataService: DataService,private store: Store<fromApp.AppState>) {
+  constructor(private dialog: MatDialog,private dataService: DataService) {
 
     this.dialogConfig = new MatDialogConfig();
     this.dialogConfig.disableClose = false;
@@ -67,11 +64,7 @@ this.onClickPizza();
   }
 
   onClickPizza(){
-    this.storeSub=this.store.select('menu').subscribe((MenuState)=>{
-      console.log(MenuState);
-      this.pizzaItems=MenuState.menuList
-    })
-    this.store.dispatch(new MenuActions.fetchPizzaList);
+    
     this.btn='left:0px'
     this.pizza=true
     this.pasta=false
@@ -80,11 +73,7 @@ this.onClickPizza();
     this.deserts=false
   }
  onClickPasta(){
-  this.storeSub=this.store.select('menu').subscribe((MenuState)=>{
-    console.log(MenuState);
-    this.pastaItems=MenuState.menuList
-  })
-  this.store.dispatch(new MenuActions.fetchPastaList);
+  
   this.btn='left:110px'
   this.pizza=false
   this.pasta=true
@@ -93,11 +82,7 @@ this.onClickPizza();
   this.deserts=false
  }
  onClickDrinks(){
-  this.storeSub=this.store.select('menu').subscribe((MenuState)=>{
-    console.log(MenuState);
-    this.drinksItems=MenuState.menuList
-  })
-  this.store.dispatch(new MenuActions.fetchDrinkList);
+  
   this.btn='left:240px'
   this.pizza=false
   this.pasta=false
@@ -106,11 +91,7 @@ this.onClickPizza();
   this.deserts=false
  }
  onClickSalad(){
-  this.storeSub=this.store.select('menu').subscribe((MenuState)=>{
-    console.log(MenuState);
-    this.saladItems=MenuState.menuList
-  })
-  this.store.dispatch(new MenuActions.fetchSaladList);
+ 
   this.btn='left:370px'
   this.pizza=false
   this.pasta=false
@@ -119,11 +100,7 @@ this.onClickPizza();
   this.deserts=false
  }
  onClickDeserts(){
-  this.storeSub=this.store.select('menu').subscribe((MenuState)=>{
-    console.log(MenuState);
-    this.dessertsItems=MenuState.menuList
-  })
-  this.store.dispatch(new MenuActions.fetchDessertList);
+ 
   this.btn='left:505px'
   this.pizza=false
   this.pasta=false

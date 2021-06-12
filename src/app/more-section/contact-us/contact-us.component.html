@@ -19,14 +19,14 @@
                     </p>
     </div>
     <div class="col-12 col-md-6 col-sm-6 col-lg-6">
-        <form >
-            <input class="form-control form-control-lg mb-3 mt-3" placeholder="NAME" type="text">
-            <input class="form-control form-control-lg mb-3" placeholder="EMAIL" type="email">
-            <input class="form-control form-control-lg mb-3" placeholder="MOBILE NUMBER" type="number">
-            <input class="form-control form-control-lg mb-3 mt-3" placeholder="SUBJECT" type="text">
+        <form [formGroup]="contactForm">
+            <input class="form-control form-control-lg mb-3 mt-3" placeholder="NAME" type="text" formControlName="name">
+            <input class="form-control form-control-lg mb-3" placeholder="EMAIL" type="email" formControlName="email">
+            <input class="form-control form-control-lg mb-3" placeholder="MOBILE NUMBER" type="number" formControlName="phone">
+            <input class="form-control form-control-lg mb-3 mt-3" placeholder="SUBJECT" type="text" formControlName="subject">
            
         </form>
-        <button class="btn ">Submit</button>
+        <button class="btn " type="submit" (click)="contact()">Submit</button>
     
     </div>
 </div>

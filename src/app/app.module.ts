@@ -13,15 +13,9 @@ import { AlertComponent } from './core/components/alert/alert.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import{MoreSectionModule} from './more-section/more-section.module'
 import { MenuModule } from './menu/menu.module';
-import { StoreModule } from '@ngrx/store';
-import * as fromApp from './store/app.reducer';
-import { AuthEffects } from './shared/navigation-menu/store/auth.effects';
-import { EffectsModule } from '@ngrx/effects';
-import { MenuEffects } from './menu/menu/store/menu.effects';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { HttpConfigInterceptor } from '../../src/app/core/interceptors/httpconfig.interceptor';
 
 
 @NgModule({
@@ -43,13 +37,8 @@ import { HttpConfigInterceptor } from '../../src/app/core/interceptors/httpconfi
     MoreSectionModule  ,
     MenuModule,
     HttpClientModule,
-    StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([
-      AuthEffects,
-      MenuEffects
-     
-    ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   entryComponents: [
     ItemComponent,
@@ -57,11 +46,11 @@ import { HttpConfigInterceptor } from '../../src/app/core/interceptors/httpconfi
     
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-            useClass: HttpConfigInterceptor,
-            multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //         useClass: HttpConfigInterceptor,
+    //         multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

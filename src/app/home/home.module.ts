@@ -18,6 +18,7 @@ import {MatDialogModule } from '@angular/material/dialog';
 
 import {MatDividerModule} from '@angular/material/divider';
 import { ProfileComponent } from './profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -44,7 +45,8 @@ import { ProfileComponent } from './profile/profile.component';
     RouterModule,
     NgbModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
     
 
 

@@ -7,33 +7,33 @@
     <div class="container border">
         <div class="row border">
             <div class="col-md-8 border">
-                <p class="sub-header text-left">BILLING DETAILS</p>
-                <form>
+                <p class="sub-header text-left">BILLING DETAILS</p>{{userDetails.name}}
+                <form [formGroup]="userDetailsForm">
                     <label>Full Name:</label><br>
-                    <input type="text" class="form-control form-control-lg"><br><br>
+                    <input type="text" class="form-control form-control-lg" name="name" formControlName="name"><br><br>
                     <label>Email:</label><br>
-                    <input type="text" class="form-control form-control-lg"><br><br>
+                    <input type="text" class="form-control form-control-lg" formControlName="email"><br><br>
                     <label>Phone No:</label><br>
-                    <input type="text" class="form-control form-control-lg"><br><br>
+                    <input type="text" class="form-control form-control-lg" formControlName="phone"><br><br>
 
                     <div class="form-group row">
                         <div class="col-sm-6">
                             <label>City:</label><br>
-                            <input type="text" class="form-control form-control-lg"><br><br>
+                            <input type="text" class="form-control form-control-lg" formControlName="city"><br><br>
                         </div>
                     <div class="col-sm-6 ">
                         <label>Pincode:</label><br>
-                        <input type="text" class="form-control form-control-lg" size=2><br><br>
+                        <input type="text" class="form-control form-control-lg" formControlName="pincode" size=2><br><br>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6">
                             <label>Landmark:</label><br>
-                            <input type="text" class="form-control form-control-lg"><br><br>
+                            <input type="text" class="form-control form-control-lg" formControlName="landmark"><br><br>
                         </div>
                     <div class="col-sm-6 ">
                         <label>House-no: (Optional)</label><br>
-                        <input type="text" class="form-control form-control-lg"><br><br>
+                        <input type="text" class="form-control form-control-lg" formControlName="houseNo"><br><br>
                         </div>
                     </div>               
                     <label>Comments:</label><br>
@@ -98,7 +98,7 @@
                               </tr>
                             </tbody>
                           </table>
-                          <button class="btn button">PLACE ORDER</button>
+                          <button class="btn button" (click)="proceedToCheckout()">PLACE ORDER</button>
                     </div>
                     
             

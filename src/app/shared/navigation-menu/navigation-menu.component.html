@@ -8,7 +8,7 @@
   </button>
   
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav ml-auto text-center ">
       <li class="nav-item  mr-5">
         <a class="nav-link active " routerLinkActive="active" routerLink="">HOME </a>
@@ -31,12 +31,14 @@
       <span class="material-icons light">
         shopping_cart
         </span>
-   
-</button>
-    <button class="button ml-5 " *ngIf="!loginSuccess" (click)="login(loginModal)">LOGIN</button>
+        <!--  -->
+</button>   
+    <button class="button ml-5 " *ngIf="!loginSuccess" (click)="login(loginModal)">
+     LOGIN</button>
     <button class="button ml-5 " *ngIf="loginSuccess" (click)="loginProfile()">Welcome</button>
   </div>
 </nav>
+
 
 
 <ng-template #loginModal let-c="close" let-d="dismiss">

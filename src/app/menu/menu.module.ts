@@ -5,6 +5,7 @@ import { CartComponent } from './cart/cart.component';
 import { MenuComponent } from './menu/menu.component';
 import { MenuRoutingModule } from './menu-routing.module';
 import { MatDividerModule } from '@angular/material/divider';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,12 +14,14 @@ import { MatDividerModule } from '@angular/material/divider';
   declarations: [
     MenuComponent, 
     CartComponent, 
-    CheckoutComponent
+    CheckoutComponent,
+    
   ],
   imports: [
     CommonModule,
     MenuRoutingModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ]
 })
 export class MenuModule { }

@@ -19,3 +19,13 @@ export interface user{
    landmark:string;
    houseNo?:number
 }
+
+export interface userDetails{
+   name:string;
+   email:string;
+   phone:string;
+   pincode:number;
+   city:string;
+   landmark:string;
+   houseNo?:number
+}

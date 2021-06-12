@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pizzeria';
+  title = [
+    {name:"Adasdsagfhgfdhgfh" , age:23216767586786},
+    {name:"Fdsafdsafgfhgfhgf", age:3123767567}
+  ];
+
+  myFunction(){
+    var popup = document.getElementById("myPopup");
+    popup?.classList.toggle("show");
+  }
 }

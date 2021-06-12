@@ -13,11 +13,11 @@
         </div>
         <div class="col border text-center ">
             <h1 class="sub-header ">RESERVE A TABLE</h1>
-            <form >
-                <input class="form-control mb-3 mt-3" placeholder="NAME" type="text">
-                <input class="form-control mb-3" placeholder="EMAIL" type="email">
-                <input class="form-control mb-3" placeholder="TABLE FOR" type="number">
-                <input class="form-control mb-3" placeholder="DATE" type="date">
+            <form [formGroup]="bookTableForm"  >
+                <input class="form-control mb-3 mt-3" placeholder="NAME"  name="name" type="text" formControlName="name">
+                <input class="form-control mb-3" placeholder="EMAIL" type="email" name="email" formControlName="email">
+                <input class="form-control mb-3" placeholder="TABLE FOR" type="number" name="tableFor" formControlName="tableFor">
+                <input class="form-control mb-3" placeholder="DATE" type="date" name="date" formControlName="date">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" >
@@ -26,7 +26,7 @@
                       </div>
                   
             </form>
-            <button class="button mt-5">SUBMIT</button>
+            <button class="button mt-5" (click)="book()" type="submit">SUBMIT</button>
         </div>
     </div>
 
